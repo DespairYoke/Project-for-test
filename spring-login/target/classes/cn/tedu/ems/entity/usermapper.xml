@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN"      
+ "http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+<mapper namespace="cn.tedu.ems.dao.UserDAO">
+	<select id="findByUsername" resultType="cn.tedu.ems.entity.User" parameterType="String">
+	SELECT * FROM t_user_ym WHERE username=#{uname}
+	</select>
+</mapper>

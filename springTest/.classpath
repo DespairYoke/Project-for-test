@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" output="target/classes" path="src/main/java">
+		<attributes>
+			<attribute name="optional" value="true"/>
+			<attribute name="maven.pomderived" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry excluding="**" kind="src" output="target/classes" path="src/main/resources">
+		<attributes>
+			<attribute name="maven.pomderived" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="src" output="target/test-classes" path="src/test/java">
+		<attributes>
+			<attribute name="optional" value="true"/>
+			<attribute name="maven.pomderived" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry excluding="**" kind="src" output="target/test-classes" path="src/test/resources">
+		<attributes>
+			<attribute name="maven.pomderived" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/J2SE-1.5">
+		<attributes>
+			<attribute name="maven.pomderived" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="con" path="org.eclipse.m2e.MAVEN2_CLASSPATH_CONTAINER">
+		<attributes>
+			<attribute name="maven.pomderived" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/4"/>
+	<classpathentry kind="lib" path="D:/新建文件夹/spring jar 2/spring-aop-4.0.5.RELEASE.jar"/>
+	<classpathentry kind="lib" path="D:/新建文件夹/spring jar 2/spring-aspects-4.0.5.RELEASE.jar"/>
+	<classpathentry kind="lib" path="D:/新建文件夹/spring jar 2/spring-beans-4.0.5.RELEASE.jar"/>
+	<classpathentry kind="lib" path="D:/新建文件夹/spring jar 2/spring-context-4.0.5.RELEASE.jar"/>
+	<classpathentry kind="lib" path="D:/新建文件夹/spring jar 2/spring-context-support-4.0.5.RELEASE.jar"/>
+	<classpathentry kind="lib" path="D:/新建文件夹/spring jar 2/spring-core-4.0.5.RELEASE.jar"/>
+	<classpathentry kind="lib" path="D:/新建文件夹/spring jar 2/spring-expression-4.0.5.RELEASE.jar"/>
+	<classpathentry kind="lib" path="D:/新建文件夹/spring jar 2/spring-framework-bom-4.0.5.RELEASE.jar"/>
+	<classpathentry kind="lib" path="D:/新建文件夹/spring jar 2/spring-instrument-4.0.5.RELEASE.jar"/>
+	<classpathentry kind="lib" path="D:/新建文件夹/spring jar 2/spring-instrument-tomcat-4.0.5.RELEASE.jar"/>
+	<classpathentry kind="lib" path="D:/新建文件夹/spring jar 2/spring-jdbc-4.0.5.RELEASE.jar"/>
+	<classpathentry kind="lib" path="D:/新建文件夹/spring jar 2/spring-jms-4.0.5.RELEASE.jar"/>
+	<classpathentry kind="lib" path="D:/新建文件夹/spring jar 2/spring-messaging-4.0.5.RELEASE.jar"/>
+	<classpathentry kind="lib" path="D:/新建文件夹/spring jar 2/spring-orm-4.0.5.RELEASE.jar"/>
+	<classpathentry kind="lib" path="D:/新建文件夹/spring jar 2/spring-oxm-4.0.5.RELEASE.jar"/>
+	<classpathentry kind="lib" path="D:/新建文件夹/spring jar 2/spring-test-4.0.5.RELEASE.jar"/>
+	<classpathentry kind="lib" path="D:/新建文件夹/spring jar 2/spring-tx-4.0.5.RELEASE.jar"/>
+	<classpathentry kind="lib" path="D:/新建文件夹/spring jar 2/spring-web-4.0.5.RELEASE.jar"/>
+	<classpathentry kind="lib" path="D:/新建文件夹/spring jar 2/spring-webmvc-4.0.5.RELEASE.jar"/>
+	<classpathentry kind="lib" path="D:/新建文件夹/spring jar 2/spring-webmvc-portlet-4.0.5.RELEASE.jar"/>
+	<classpathentry kind="lib" path="D:/新建文件夹/spring jar 2/spring-websocket-4.0.5.RELEASE.jar"/>
+	<classpathentry kind="output" path="target/classes"/>
+</classpath>

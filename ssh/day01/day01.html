@@ -1,0 +1,773 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>day01</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<style type="text/css">
+/* GitHub stylesheet for MarkdownPad (http://markdownpad.com) */
+/* Author: Nicolas Hery - http://nicolashery.com */
+/* Version: b13fe65ca28d2e568c6ed5d7f06581183df8f2ff */
+/* Source: https://github.com/nicolahery/markdownpad-github */
+
+/* RESET
+=============================================================================*/
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+/* BODY
+=============================================================================*/
+
+body {
+  font-family: Helvetica, arial, freesans, clean, sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #333;
+  background-color: #fff;
+  padding: 20px;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+body>*:first-child {
+  margin-top: 0 !important;
+}
+
+body>*:last-child {
+  margin-bottom: 0 !important;
+}
+
+/* BLOCKS
+=============================================================================*/
+
+p, blockquote, ul, ol, dl, table, pre {
+  margin: 15px 0;
+}
+
+/* HEADERS
+=============================================================================*/
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 20px 0 10px;
+  padding: 0;
+  font-weight: bold;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1 tt, h1 code, h2 tt, h2 code, h3 tt, h3 code, h4 tt, h4 code, h5 tt, h5 code, h6 tt, h6 code {
+  font-size: inherit;
+}
+
+h1 {
+  font-size: 28px;
+  color: #000;
+}
+
+h2 {
+  font-size: 24px;
+  border-bottom: 1px solid #ccc;
+  color: #000;
+}
+
+h3 {
+  font-size: 18px;
+}
+
+h4 {
+  font-size: 16px;
+}
+
+h5 {
+  font-size: 14px;
+}
+
+h6 {
+  color: #777;
+  font-size: 14px;
+}
+
+body>h2:first-child, body>h1:first-child, body>h1:first-child+h2, body>h3:first-child, body>h4:first-child, body>h5:first-child, body>h6:first-child {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+a:first-child h1, a:first-child h2, a:first-child h3, a:first-child h4, a:first-child h5, a:first-child h6 {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+h1+p, h2+p, h3+p, h4+p, h5+p, h6+p {
+  margin-top: 10px;
+}
+
+/* LINKS
+=============================================================================*/
+
+a {
+  color: #4183C4;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* LISTS
+=============================================================================*/
+
+ul, ol {
+  padding-left: 30px;
+}
+
+ul li > :first-child, 
+ol li > :first-child, 
+ul li ul:first-of-type, 
+ol li ol:first-of-type, 
+ul li ol:first-of-type, 
+ol li ul:first-of-type {
+  margin-top: 0px;
+}
+
+ul ul, ul ol, ol ol, ol ul {
+  margin-bottom: 0;
+}
+
+dl {
+  padding: 0;
+}
+
+dl dt {
+  font-size: 14px;
+  font-weight: bold;
+  font-style: italic;
+  padding: 0;
+  margin: 15px 0 5px;
+}
+
+dl dt:first-child {
+  padding: 0;
+}
+
+dl dt>:first-child {
+  margin-top: 0px;
+}
+
+dl dt>:last-child {
+  margin-bottom: 0px;
+}
+
+dl dd {
+  margin: 0 0 15px;
+  padding: 0 15px;
+}
+
+dl dd>:first-child {
+  margin-top: 0px;
+}
+
+dl dd>:last-child {
+  margin-bottom: 0px;
+}
+
+/* CODE
+=============================================================================*/
+
+pre, code, tt {
+  font-size: 12px;
+  font-family: Consolas, "Liberation Mono", Courier, monospace;
+}
+
+code, tt {
+  margin: 0 0px;
+  padding: 0px 0px;
+  white-space: nowrap;
+  border: 1px solid #eaeaea;
+  background-color: #f8f8f8;
+  border-radius: 3px;
+}
+
+pre>code {
+  margin: 0;
+  padding: 0;
+  white-space: pre;
+  border: none;
+  background: transparent;
+}
+
+pre {
+  background-color: #f8f8f8;
+  border: 1px solid #ccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px;
+}
+
+pre code, pre tt {
+  background-color: transparent;
+  border: none;
+}
+
+kbd {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    background-color: #DDDDDD;
+    background-image: linear-gradient(#F1F1F1, #DDDDDD);
+    background-repeat: repeat-x;
+    border-color: #DDDDDD #CCCCCC #CCCCCC #DDDDDD;
+    border-image: none;
+    border-radius: 2px 2px 2px 2px;
+    border-style: solid;
+    border-width: 1px;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    line-height: 10px;
+    padding: 1px 4px;
+}
+
+/* QUOTES
+=============================================================================*/
+
+blockquote {
+  border-left: 4px solid #DDD;
+  padding: 0 15px;
+  color: #777;
+}
+
+blockquote>:first-child {
+  margin-top: 0px;
+}
+
+blockquote>:last-child {
+  margin-bottom: 0px;
+}
+
+/* HORIZONTAL RULES
+=============================================================================*/
+
+hr {
+  clear: both;
+  margin: 15px 0;
+  height: 0px;
+  overflow: hidden;
+  border: none;
+  background: transparent;
+  border-bottom: 4px solid #ddd;
+  padding: 0;
+}
+
+/* TABLES
+=============================================================================*/
+
+table th {
+  font-weight: bold;
+}
+
+table th, table td {
+  border: 1px solid #ccc;
+  padding: 6px 13px;
+}
+
+table tr {
+  border-top: 1px solid #ccc;
+  background-color: #fff;
+}
+
+table tr:nth-child(2n) {
+  background-color: #f8f8f8;
+}
+
+/* IMAGES
+=============================================================================*/
+
+img {
+  max-width: 100%
+}
+</style>
+</head>
+<body>
+<h1>SSH</h1>
+<p>SSH = Struts2 Spring Hibernate
+SSM = Spring-MVC Spring MyBatis</p>
+<h2>Struts2</h2>
+<p>Struts: 架子</p>
+<h2>MVC</h2>
+<p><img src="1.png" /></p>
+<h2>Struts2 MVC</h2>
+<p><img src="2.png" /></p>
+<h3>Struts2 Hello World!</h3>
+<ol>
+<li>
+<p>导入 Struts2 包</p>
+<pre><code>&lt;dependency&gt;
+    &lt;groupId&gt;org.apache.struts&lt;/groupId&gt;
+    &lt;artifactId&gt;struts2-core&lt;/artifactId&gt;
+    &lt;version&gt;2.5.12&lt;/version&gt;
+&lt;/dependency&gt;
+</code></pre>
+
+</li>
+<li>
+<p>配置 Struts2 前端控制器(web.xml)</p>
+<ul>
+<li>
+<p>配置web.xml</p>
+<pre><code>&lt;filter&gt;
+    &lt;display-name&gt;StrutsPrepareAndExecuteFilter&lt;/display-name&gt;
+    &lt;filter-name&gt;StrutsPrepareAndExecuteFilter&lt;/filter-name&gt;
+    &lt;filter-class&gt;org.apache.struts2.dispatcher.filter.StrutsPrepareAndExecuteFilter&lt;/filter-class&gt;
+&lt;/filter&gt;
+&lt;filter-mapping&gt;
+    &lt;filter-name&gt;StrutsPrepareAndExecuteFilter&lt;/filter-name&gt;
+    &lt;url-pattern&gt;/*&lt;/url-pattern&gt;
+&lt;/filter-mapping&gt;
+</code></pre>
+
+</li>
+<li>
+<p>添加resource/struts.xml</p>
+<pre><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;!DOCTYPE struts PUBLIC
+    &quot;-//Apache Software Foundation//DTD Struts Configuration 2.5//EN&quot;
+    &quot;http://struts.apache.org/dtds/struts-2.5.dtd&quot;&gt;
+&lt;struts&gt;
+&lt;/struts&gt;
+</code></pre>
+
+</li>
+<li>
+<p>测试</p>
+</li>
+</ul>
+</li>
+<li>
+<p>编写控制器</p>
+<pre><code>public class DemoAction {
+
+    public String test(){
+        System.out.println(&quot;Hello World!&quot;); 
+        return &quot;success&quot;;//返回&quot;结果(视图)&quot;的名字
+    }
+}
+</code></pre>
+
+</li>
+<li>
+<p>编写/WEB-INF/jsp/ok.jsp作为视图</p>
+<pre><code>&lt;%@page pageEncoding=&quot;utf-8&quot; 
+contentType=&quot;text/html; charset=utf-8&quot; %&gt;
+&lt;html&gt;
+    &lt;head&gt;&lt;/head&gt;
+    &lt;body&gt;
+    &lt;!-- /WEB-INF/jsp/ok.jsp --&gt;
+        &lt;h1&gt;Hello World!&lt;/h1&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+
+</li>
+<li>
+<p>配置 struts.xml </p>
+<ul>
+<li>
+<p>配置 URL -&gt; 控制器 -&gt; 结果视图</p>
+<pre><code>&lt;!-- 映射的第一层路径 
+http://localhost:8080/ssh/demo --&gt;
+&lt;package name=&quot;demo&quot; namespace=&quot;/demo&quot;
+    extends=&quot;struts-default&quot;&gt;
+&lt;!-- http://localhost:8080/ssh/demo/hello.action --&gt;
+    &lt;action name=&quot;hello&quot;
+        class=&quot;ssh.day01.DemoAction&quot;
+        method=&quot;test&quot;&gt;
+        &lt;result name=&quot;success&quot;&gt; 
+            /WEB-INF/jsp/ok.jsp
+        &lt;/result&gt;
+    &lt;/action&gt;
+&lt;/package&gt;
+</code></pre>
+
+</li>
+</ul>
+<blockquote>
+<p>extends=&quot;struts-default&quot; 用于继承Struts提供的默认组件.</p>
+</blockquote>
+</li>
+<li>
+<p>测试:</p>
+<pre><code>http://localhost:8088/ssh/demo/hello.action
+</code></pre>
+
+</li>
+</ol>
+<h3>控制器接收表单参数</h3>
+<p>和Spring MVC 类似 Struts2 也封装了将表单数据传输到控制器中的变量的功能:</p>
+<p><img src="3.png" /></p>
+<p>步骤:</p>
+<ol>
+<li>
+<p>编写表单页面 form.jsp:</p>
+<pre><code>&lt;%@page pageEncoding=&quot;utf-8&quot; 
+contentType=&quot;text/html; charset=utf-8&quot; %&gt;
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+    &lt;head&gt;
+        &lt;meta charset=&quot;utf-8&quot;&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;h1&gt;页面向控制器传递参数&lt;/h1&gt;
+        &lt;form action=&quot;demo/test.action&quot; method=&quot;post&quot;&gt;
+            &lt;div&gt;
+                &lt;label&gt;年龄&lt;/label&gt;
+                &lt;input type=&quot;text&quot; name=&quot;age&quot;&gt;
+            &lt;/div&gt;
+            &lt;div&gt;
+                &lt;label&gt;地址&lt;/label&gt;
+                &lt;input type=&quot;text&quot; name=&quot;address&quot;&gt;
+            &lt;/div&gt; 
+            &lt;div&gt;
+                &lt;label&gt;价格&lt;/label&gt;
+                &lt;input type=&quot;text&quot; name=&quot;price&quot;&gt;
+            &lt;/div&gt;
+            &lt;input type=&quot;submit&quot; value=&quot;提交&quot;&gt;
+        &lt;/form&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+
+</li>
+<li>
+<p>编写控制器接收表单参数 TestAction.java</p>
+<pre><code>public class TestAction {
+    private Integer age;
+    private String address;
+    private Double price;
+
+    public Integer getAge() {
+        return age;
+    }
+
+    public void setAge(Integer age) {
+        this.age = age;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public Double getPrice() {
+        return price;
+    }
+
+    public void setPrice(Double price) {
+        this.price = price;
+    }
+
+    public String save(){
+        /**
+         * Struts2 会在执行控制器方法之前将表单参数
+         * 注入到Bean属性中!
+         */
+        System.out.println(&quot;age:&quot;+age); 
+        System.out.println(&quot;address:&quot;+address); 
+        System.out.println(&quot;price:&quot;+price); 
+        return &quot;success&quot;;
+    }
+}
+</code></pre>
+
+<blockquote>
+<p>注意: 控制器Bean属性名称与表单项目中name属性一致!</p>
+</blockquote>
+</li>
+<li>
+<p>配置: struts.xml</p>
+<pre><code>&lt;!-- 接收浏览器发送的表单参数 --&gt;
+&lt;action name=&quot;test&quot; class=&quot;ssh.day01.TestAction&quot;
+    method=&quot;save&quot;&gt;
+    &lt;result name=&quot;success&quot;&gt;
+        /WEB-INF/jsp/ok.jsp         
+    &lt;/result&gt;
+&lt;/action&gt;
+</code></pre>
+
+</li>
+<li>
+<p>测试</p>
+<pre><code>...
+</code></pre>
+
+</li>
+</ol>
+<h3>404 Bug 的查找</h3>
+<p><img src="404.png" /></p>
+<h3>利用 &quot;域模型(JavaBean)&quot; 打包传递参数</h3>
+<p>当表单数据项目多, 表单数据项目被重用时候, 使用这个功能:</p>
+<p><img src="5.png" /></p>
+<ol>
+<li>
+<p>编写JavaBean</p>
+<pre><code>public class Product implements Serializable{
+
+    private Integer age;
+    private String address;
+    private Double price;
+
+    public Product() {
+    }
+
+    public Integer getAge() {
+        return age;
+    }
+
+    public void setAge(Integer age) {
+        this.age = age;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public Double getPrice() {
+        return price;
+    }
+
+    public void setPrice(Double price) {
+        this.price = price;
+    }
+
+    @Override
+    public String toString() {
+        return &quot;Product [age=&quot; + age + &quot;, address=&quot; + address + &quot;, price=&quot; + price + &quot;]&quot;;
+    }
+
+
+}
+</code></pre>
+
+</li>
+<li>
+<p>编写表单 add.html</p>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;meta charset=&quot;UTF-8&quot;&gt;
+&lt;title&gt;向服务器传递参数&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;将数据打包为 &quot;域模型(Java Bean)&quot;传递&lt;/h1&gt;
+    &lt;form action=&quot;demo/add.action&quot; method=&quot;post&quot;&gt;
+        &lt;div&gt;
+            &lt;label&gt;年龄:&lt;/label&gt;
+            &lt;input type=&quot;text&quot; name=&quot;product.age&quot; &gt;
+        &lt;/div&gt;
+        &lt;div&gt;
+            &lt;label&gt;地址:&lt;/label&gt;
+            &lt;input type=&quot;text&quot; name=&quot;product.address&quot;&gt;
+        &lt;/div&gt;
+        &lt;div&gt;
+            &lt;label&gt;价格:&lt;/label&gt;
+            &lt;input type=&quot;text&quot; name=&quot;product.price&quot;&gt;
+        &lt;/div&gt;
+        &lt;input type=&quot;submit&quot; value=&quot;保存&quot;&gt;  
+    &lt;/form&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+
+</li>
+<li>
+<p>编写控制器 </p>
+<pre><code>public class AddAction {
+
+    private Product product;
+
+    public Product getProduct() {
+        return product;
+    }
+    public void setProduct(Product product) {
+        this.product = product;
+    }
+    //利用JavaBean打包接收表单参数
+    public String add(){
+        System.out.println(product); 
+        return &quot;success&quot;;
+    }
+
+}
+</code></pre>
+
+</li>
+<li>
+<p>配置 struts.xml</p>
+<pre><code>&lt;!-- 利用JavaBean打包接收表单参数 --&gt;
+&lt;action name=&quot;add&quot; class=&quot;ssh.day01.AddAction&quot;
+    method=&quot;add&quot;&gt;
+    &lt;result name=&quot;success&quot;&gt;
+        /WEB-INF/jsp/ok.jsp
+    &lt;/result&gt;   
+&lt;/action&gt;
+</code></pre>
+
+</li>
+<li>
+<p>测试</p>
+<pre><code>...
+</code></pre>
+
+</li>
+</ol>
+<h3>控制器向JSP传递数据</h3>
+<p>Struts2 控制器运算结果可以传递到JSP中展示给用户. </p>
+<p><img src="6.png" /></p>
+<p>规则为: 控制器的Bean属性可以在JSP中利用 JSTL+EL 展示给用户.</p>
+<p>实现步骤:</p>
+<ol>
+<li>
+<p>编写控制器 </p>
+<pre><code>public class MsgAction {
+    private String message;
+
+    public void setMessage(String message) {
+        this.message = message;
+    }
+    public String getMessage() {
+        return message;
+    }
+    /**
+     * 将数据从控制器传递到 JSP 页面
+     */
+    public String execute(){
+        message = &quot;Hello World!&quot;;
+        return &quot;success&quot;;
+    }
+}
+</code></pre>
+
+</li>
+<li>
+<p>编写JSP, 用EL展示数据: /WEB-INF/jsp/msg.jsp</p>
+<pre><code>&lt;%@page pageEncoding=&quot;utf-8&quot; 
+contentType=&quot;text/html; charset=utf-8&quot; %&gt;
+&lt;html&gt;
+    &lt;head&gt;&lt;/head&gt;
+    &lt;body&gt;
+        &lt;!-- /WEB-INF/jsp/msg.jsp --&gt;
+        &lt;h1&gt;控制器向JSP传递参数&lt;/h1&gt;
+        &lt;h2&gt;${message}&lt;/h2&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+
+</li>
+<li>
+<p>配置: struts.xml</p>
+<pre><code>&lt;!-- 将控制器的数据传递到 JSP --&gt;
+&lt;action name=&quot;msg&quot; class=&quot;ssh.day01.MsgAction&quot;&gt;
+    &lt;result name=&quot;success&quot;&gt;
+        /WEB-INF/jsp/msg.jsp
+    &lt;/result&gt;
+&lt;/action&gt;
+</code></pre>
+
+<blockquote>
+<p>当控制器方法名为execute时候,可以不适用</p>
+</blockquote>
+</li>
+</ol>
+<h3>将控制器中的集合传递到JSP展示为列表</h3>
+<p><img src="7.png" /></p>
+<ol>
+<li>
+<p>添加控制器</p>
+<pre><code>public class ListAction {
+    private List&lt;Product&gt; list=
+            new ArrayList&lt;Product&gt;();
+
+    public List&lt;Product&gt; getList() {
+        return list;
+    }
+    public void setList(List&lt;Product&gt; list) {
+        this.list = list;
+    }
+
+    public String execute(){
+        list.add(new Product(5, &quot;北京&quot;, 5.6));
+        list.add(new Product(6, &quot;上海&quot;, 6.6));
+        list.add(new Product(7, &quot;广州&quot;, 7.6));
+        list.add(new Product(8, &quot;深圳&quot;, 8.6));
+        list.add(new Product(9, &quot;杭州&quot;, 9.6));
+        return &quot;success&quot;;
+    }
+}
+</code></pre>
+
+</li>
+<li>
+<p>添加 /WEB-INF/jsp/list.jsp</p>
+<pre><code>&lt;%@page pageEncoding=&quot;utf-8&quot; 
+contentType=&quot;text/html; charset=utf-8&quot; %&gt;
+&lt;%@taglib prefix=&quot;c&quot; 
+    uri=&quot;http://java.sun.com/jsp/jstl/core&quot; %&gt;
+&lt;html&gt;
+    &lt;head&gt;&lt;/head&gt;
+    &lt;body&gt;
+        &lt;!-- /WEB-INF/jsp/list.jsp --&gt;
+        &lt;h1&gt;产品列表&lt;/h1&gt;
+        &lt;ul&gt;
+            &lt;c:forEach var=&quot;p&quot; items=&quot;${list}&quot;&gt;
+                &lt;li&gt;${p.address} ${p.age}&lt;/li&gt;
+            &lt;/c:forEach&gt;
+        &lt;/ul&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+
+<blockquote>
+<p>需要导入JSTL</p>
+</blockquote>
+<pre><code>&lt;dependency&gt;
+    &lt;groupId&gt;jstl&lt;/groupId&gt;
+    &lt;artifactId&gt;jstl&lt;/artifactId&gt;
+    &lt;version&gt;1.2&lt;/version&gt;
+&lt;/dependency&gt;
+</code></pre>
+
+</li>
+<li>
+<p>配置 struts.xml</p>
+<pre><code>&lt;!-- 将控制器中的集合传递到JSP展示为列表 --&gt;
+&lt;action name=&quot;list&quot; class=&quot;ssh.day01.ListAction&quot;&gt;
+    &lt;result name=&quot;success&quot;&gt;
+        /WEB-INF/jsp/list.jsp
+    &lt;/result&gt;
+&lt;/action&gt;
+</code></pre>
+
+</li>
+<li>
+<p>测试</p>
+</li>
+</ol>
+<hr />
+<h2>作业</h2>
+<ol>
+<li>完成Struts项目搭建, 并且实现全部课堂案例</li>
+<li>实现将控制器中的产品列表传递到JSP中展示为表格</li>
+</ol>
+
+</body>
+</html>
+<!-- This document was created with MarkdownPad, the Markdown editor for Windows (http://markdownpad.com) -->

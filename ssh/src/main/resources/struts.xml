@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+	"http://struts.apache.org/dtds/struts-2.5.dtd">
+<struts>
+	
+	<constant name="struts.action.extension" value="do"/>
+	<!-- 映射的第一层路径 
+	http://localhost:8080/ssh/demo -->
+	<package name="demo" namespace="/demo"
+		extends="struts-default">
+	<!-- http://localhost:8080/ssh/demo/hello.action -->
+		<action name="hello"
+			class="ssh.day01.DemoAction"
+			method="test">
+			<result name="success"> 
+				/WEB-INF/jsp/ok.jsp
+			</result>
+		</action>
+		
+		<!-- 接收浏览器发送的表单参数 -->
+		<action name="test" class="ssh.day01.TestAction"
+			method="save">
+			<result name="success">
+				/WEB-INF/jsp/ok.jsp			
+			</result>
+		</action>
+		
+		<!-- 利用JavaBean打包接收表单参数 -->
+		<action name="add" class="ssh.day01.AddAction"
+			method="add">
+			<result name="success">
+				/WEB-INF/jsp/ok.jsp
+			</result>	
+		</action>		
+		
+		<!-- 将控制器的数据传递到 JSP -->
+		<action name="msg" class="ssh.day01.MsgAction">
+			<result name="success">
+				/WEB-INF/jsp/msg.jsp
+			</result>
+		</action>
+		
+		<!-- 将控制器中的集合传递到JSP展示为列表 -->
+		<action name="list" class="ssh.day01.ListAction">
+			<result name="success">
+				/WEB-INF/jsp/list.jsp
+			</result>
+		</action>
+		
+	</package>
+	
+	<package name="day02" namespace="/day02"
+		extends="struts-default">
+		
+		<!-- 重定向测试 -->
+		<action name="doc" class="ssh.day02.DocAction">
+			<result name="success" type="redirect"> 
+				http://doc.tedu.cn
+			</result>
+		</action>	
+		<action name="doc2" class="ssh.day02.DocAction">
+			<result name="success" type="redirect"> 
+				<param name="location">
+					http://doc.tedu.cn
+				</param>
+			</result>
+		</action>			
+		
+		<!-- 重定向到其他控制器 -->
+		<action name="add" class="ssh.day02.DocAction">
+			<result name="success" 
+				type="redirectAction">
+				<param name="actionName">list</param>
+				<param name="namespace">/demo</param>	
+			</result>
+		</action>
+		
+		<!-- 动态生成图片 -->
+		<action name="logo" class="ssh.day02.LogoAction">
+			<result name="success" type="stream">
+				<param name="contentType">${type}</param>
+				<param name="inputName">img</param>
+			</result>
+		</action>
+		
+		<!-- 下载图片 -->
+		<action name="download-logo" 
+			class="ssh.day02.LogoAction">
+			<result name="success" type="stream">
+				<param name="contentType">${type}</param>
+				<param name="inputName">img</param>
+				<param name="contentDisposition">
+					attachment;filename="logo.png"
+				</param>
+			</result>
+		</action>
+		
+		<!-- 下载Excel文件 -->
+		<action name="download-excel" 
+			class="ssh.day02.ExcelAction">
+			<result name="success" type="stream">
+				<param name="contentType">${type}</param>
+				<param name="inputName">excel</param>
+				<param name="contentDisposition">
+					attachment;filename="demo.xlsx"
+				</param>
+			</result>
+		</action>
+		
+	</package>
+	
+	<package name="test" namespace="/test"
+		extends="json-default">
+		<!-- 将控制器的全部属性发送到客户端 -->
+		<action name="json" class="ssh.day02.JsonAction">
+			<result name="success" type="json"></result>
+		</action>
+	
+		<!-- 将控制器的一个指定属性name发送到客户端 -->
+		<action name="json2" class="ssh.day02.JsonAction">
+			<result name="success" type="json">
+				<param name="root">name</param>
+			</result>
+		</action>
+		
+		<!-- 利用JsonResult封装数据发送到浏览器客户端 -->
+		<action name="json3" 
+			class="ssh.day02.JsonResultAction">
+			<result name="success" type="json">
+				<param name="root">jsonResult</param>
+			</result>
+		</action>
+		
+		<!-- 利用Spring管理控制器对象 class=BeanID -->
+		<action name="demo" class="demoAction">
+			<result name="success">
+				/WEB-INF/jsp/ok.jsp
+			</result>
+		</action>
+		
+		<!-- 测试 线程并发安全问题 -->
+		<action name="test" class="testAction"
+			method="save">
+			<result name="success">
+				/WEB-INF/jsp/ok.jsp
+			</result>
+		</action>		
+	</package>
+</struts>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

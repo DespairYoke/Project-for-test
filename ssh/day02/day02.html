@@ -1,0 +1,841 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>day02</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<style type="text/css">
+/* GitHub stylesheet for MarkdownPad (http://markdownpad.com) */
+/* Author: Nicolas Hery - http://nicolashery.com */
+/* Version: b13fe65ca28d2e568c6ed5d7f06581183df8f2ff */
+/* Source: https://github.com/nicolahery/markdownpad-github */
+
+/* RESET
+=============================================================================*/
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+/* BODY
+=============================================================================*/
+
+body {
+  font-family: Helvetica, arial, freesans, clean, sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #333;
+  background-color: #fff;
+  padding: 20px;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+body>*:first-child {
+  margin-top: 0 !important;
+}
+
+body>*:last-child {
+  margin-bottom: 0 !important;
+}
+
+/* BLOCKS
+=============================================================================*/
+
+p, blockquote, ul, ol, dl, table, pre {
+  margin: 15px 0;
+}
+
+/* HEADERS
+=============================================================================*/
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 20px 0 10px;
+  padding: 0;
+  font-weight: bold;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1 tt, h1 code, h2 tt, h2 code, h3 tt, h3 code, h4 tt, h4 code, h5 tt, h5 code, h6 tt, h6 code {
+  font-size: inherit;
+}
+
+h1 {
+  font-size: 28px;
+  color: #000;
+}
+
+h2 {
+  font-size: 24px;
+  border-bottom: 1px solid #ccc;
+  color: #000;
+}
+
+h3 {
+  font-size: 18px;
+}
+
+h4 {
+  font-size: 16px;
+}
+
+h5 {
+  font-size: 14px;
+}
+
+h6 {
+  color: #777;
+  font-size: 14px;
+}
+
+body>h2:first-child, body>h1:first-child, body>h1:first-child+h2, body>h3:first-child, body>h4:first-child, body>h5:first-child, body>h6:first-child {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+a:first-child h1, a:first-child h2, a:first-child h3, a:first-child h4, a:first-child h5, a:first-child h6 {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+h1+p, h2+p, h3+p, h4+p, h5+p, h6+p {
+  margin-top: 10px;
+}
+
+/* LINKS
+=============================================================================*/
+
+a {
+  color: #4183C4;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* LISTS
+=============================================================================*/
+
+ul, ol {
+  padding-left: 30px;
+}
+
+ul li > :first-child, 
+ol li > :first-child, 
+ul li ul:first-of-type, 
+ol li ol:first-of-type, 
+ul li ol:first-of-type, 
+ol li ul:first-of-type {
+  margin-top: 0px;
+}
+
+ul ul, ul ol, ol ol, ol ul {
+  margin-bottom: 0;
+}
+
+dl {
+  padding: 0;
+}
+
+dl dt {
+  font-size: 14px;
+  font-weight: bold;
+  font-style: italic;
+  padding: 0;
+  margin: 15px 0 5px;
+}
+
+dl dt:first-child {
+  padding: 0;
+}
+
+dl dt>:first-child {
+  margin-top: 0px;
+}
+
+dl dt>:last-child {
+  margin-bottom: 0px;
+}
+
+dl dd {
+  margin: 0 0 15px;
+  padding: 0 15px;
+}
+
+dl dd>:first-child {
+  margin-top: 0px;
+}
+
+dl dd>:last-child {
+  margin-bottom: 0px;
+}
+
+/* CODE
+=============================================================================*/
+
+pre, code, tt {
+  font-size: 12px;
+  font-family: Consolas, "Liberation Mono", Courier, monospace;
+}
+
+code, tt {
+  margin: 0 0px;
+  padding: 0px 0px;
+  white-space: nowrap;
+  border: 1px solid #eaeaea;
+  background-color: #f8f8f8;
+  border-radius: 3px;
+}
+
+pre>code {
+  margin: 0;
+  padding: 0;
+  white-space: pre;
+  border: none;
+  background: transparent;
+}
+
+pre {
+  background-color: #f8f8f8;
+  border: 1px solid #ccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px;
+}
+
+pre code, pre tt {
+  background-color: transparent;
+  border: none;
+}
+
+kbd {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    background-color: #DDDDDD;
+    background-image: linear-gradient(#F1F1F1, #DDDDDD);
+    background-repeat: repeat-x;
+    border-color: #DDDDDD #CCCCCC #CCCCCC #DDDDDD;
+    border-image: none;
+    border-radius: 2px 2px 2px 2px;
+    border-style: solid;
+    border-width: 1px;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    line-height: 10px;
+    padding: 1px 4px;
+}
+
+/* QUOTES
+=============================================================================*/
+
+blockquote {
+  border-left: 4px solid #DDD;
+  padding: 0 15px;
+  color: #777;
+}
+
+blockquote>:first-child {
+  margin-top: 0px;
+}
+
+blockquote>:last-child {
+  margin-bottom: 0px;
+}
+
+/* HORIZONTAL RULES
+=============================================================================*/
+
+hr {
+  clear: both;
+  margin: 15px 0;
+  height: 0px;
+  overflow: hidden;
+  border: none;
+  background: transparent;
+  border-bottom: 4px solid #ddd;
+  padding: 0;
+}
+
+/* TABLES
+=============================================================================*/
+
+table th {
+  font-weight: bold;
+}
+
+table th, table td {
+  border: 1px solid #ccc;
+  padding: 6px 13px;
+}
+
+table tr {
+  border-top: 1px solid #ccc;
+  background-color: #fff;
+}
+
+table tr:nth-child(2n) {
+  background-color: #f8f8f8;
+}
+
+/* IMAGES
+=============================================================================*/
+
+img {
+  max-width: 100%
+}
+</style>
+</head>
+<body>
+<h1>SSH</h1>
+<h2>Struts2</h2>
+<h3>结果类型</h3>
+<p>Struts2 中的视图称为结果, 有很多类型, 可以在 struts-default.xml 中看到其定义:</p>
+<pre><code>&lt;result-types&gt;
+    &lt;result-type name=&quot;chain&quot; class=&quot;com.opensymphony.xwork2.ActionChainResult&quot;/&gt;
+    &lt;result-type name=&quot;dispatcher&quot; class=&quot;org.apache.struts2.result.ServletDispatcherResult&quot; default=&quot;true&quot;/&gt;
+    &lt;result-type name=&quot;freemarker&quot; class=&quot;org.apache.struts2.views.freemarker.FreemarkerResult&quot;/&gt;
+    &lt;result-type name=&quot;httpheader&quot; class=&quot;org.apache.struts2.result.HttpHeaderResult&quot;/&gt;
+    &lt;result-type name=&quot;redirect&quot; class=&quot;org.apache.struts2.result.ServletRedirectResult&quot;/&gt;
+    &lt;result-type name=&quot;redirectAction&quot; class=&quot;org.apache.struts2.result.ServletActionRedirectResult&quot;/&gt;
+    &lt;result-type name=&quot;stream&quot; class=&quot;org.apache.struts2.result.StreamResult&quot;/&gt;
+    &lt;result-type name=&quot;velocity&quot; class=&quot;org.apache.struts2.result.VelocityResult&quot;/&gt;
+    &lt;result-type name=&quot;xslt&quot; class=&quot;org.apache.struts2.views.xslt.XSLTResult&quot;/&gt;
+    &lt;result-type name=&quot;plainText&quot; class=&quot;org.apache.struts2.result.PlainTextResult&quot; /&gt;
+    &lt;result-type name=&quot;postback&quot; class=&quot;org.apache.struts2.result.PostbackResult&quot; /&gt;
+&lt;/result-types&gt;
+</code></pre>
+
+<p>默认结果类型是 dispatcher, 由类 ServletDispatcherResult 负责处理. </p>
+<h3>重定向类型 redirect</h3>
+<p>重定向类型 <strong>redirect</strong> 由 ServletRedirectResult 类负责解析:</p>
+<p><img src="1.png" /></p>
+<p>使用步骤如下:</p>
+<ol>
+<li>
+<p>编写控制器:</p>
+<pre><code>public class DocAction {
+
+    public String execute(){
+        System.out.println(&quot;DocAction&quot;); 
+        return &quot;success&quot;;
+    }
+}
+</code></pre>
+
+</li>
+<li>
+<p>配置 struts.xml</p>
+<pre><code>&lt;package name=&quot;day02&quot; namespace=&quot;/day02&quot;
+    extends=&quot;struts-default&quot;&gt;
+
+    &lt;!-- 重定向测试 --&gt;
+    &lt;action name=&quot;doc&quot; class=&quot;ssh.day02.DocAction&quot;&gt;
+        &lt;result name=&quot;success&quot; type=&quot;redirect&quot;&gt; 
+            http://doc.tedu.cn
+        &lt;/result&gt;
+    &lt;/action&gt;           
+&lt;/package&gt;
+</code></pre>
+
+</li>
+<li>
+<p>测试.</p>
+</li>
+</ol>
+<h3>重定向到其他 控制器  redirectAction</h3>
+<p>重定向到其他控制器的处理类: ServletActionRedirectResult </p>
+<p><img src="2.png" /></p>
+<p>使用步骤:</p>
+<ol>
+<li>
+<p>配置struts.xml</p>
+<pre><code>&lt;!-- 重定向到其他控制器 --&gt;
+&lt;action name=&quot;add&quot; class=&quot;ssh.day02.DocAction&quot;&gt;
+    &lt;result name=&quot;success&quot; 
+        type=&quot;redirectAction&quot;&gt;
+        &lt;param name=&quot;actionName&quot;&gt;list&lt;/param&gt;
+        &lt;param name=&quot;namespace&quot;&gt;/demo&lt;/param&gt;   
+    &lt;/result&gt;
+&lt;/action&gt;
+</code></pre>
+
+</li>
+<li>
+<p>测试</p>
+</li>
+</ol>
+<h3>Stream 类型结果</h3>
+<p>Http协议支持多种媒体类型数据下载功能, 重要响应头是Content-Type:</p>
+<p><img src="3.png" /></p>
+<p>Struts2 利用Stream 类型的结果封装了HTTP的下载功能:</p>
+<p><img src="4.png" /></p>
+<p>使用步骤:</p>
+<ol>
+<li>
+<p>声明控制器:</p>
+<pre><code>public class LogoAction {
+    private String type;
+    private InputStream img;
+
+    public String getType() {
+        return type;
+    }
+    public void setType(String type) {
+        this.type = type;
+    }
+    public InputStream getImg() {
+        return img;
+    }
+    public void setImg(InputStream img) {
+        this.img = img;
+    }
+
+    public String execute() throws IOException{
+
+        type = &quot;image/png&quot;;
+        img = createPngImage(&quot;Hello&quot;);
+
+        return &quot;success&quot;;
+    }
+    private InputStream createPngImage(String msg) 
+        throws IOException{
+        BufferedImage image = new BufferedImage(
+            200, 100, BufferedImage.TYPE_3BYTE_BGR);
+        image.setRGB(100, 50, 0xffff00);
+        Graphics2D g = image.createGraphics();
+        g.setColor(new Color(0xffff00)); 
+        g.drawString(msg, 20, 40); 
+        //将 image 编码为 png数据(byte数组)
+        ByteArrayOutputStream out = 
+                new ByteArrayOutputStream();
+        ImageIO.write(image, &quot;png&quot;, out);
+        out.close();
+        byte[] data = out.toByteArray();
+        return new ByteArrayInputStream(data); 
+    }
+}
+</code></pre>
+
+</li>
+<li>
+<p>配置struts.xml</p>
+<pre><code>&lt;!-- 动态生成图片 --&gt;
+&lt;action name=&quot;logo&quot; class=&quot;ssh.day02.LogoAction&quot;&gt;
+    &lt;result name=&quot;success&quot; type=&quot;stream&quot;&gt;
+        &lt;param name=&quot;contentType&quot;&gt;${type}&lt;/param&gt;
+        &lt;param name=&quot;inputName&quot;&gt;img&lt;/param&gt;
+    &lt;/result&gt;
+&lt;/action&gt;
+</code></pre>
+
+</li>
+<li>
+<p>测试</p>
+</li>
+<li>
+<p>在网页中展示动态图片:</p>
+<pre><code>&lt;h2&gt;显示图片&lt;/h2&gt;
+&lt;img alt=&quot;&quot; src=&quot;day02/logo.do&quot;&gt;
+</code></pre>
+
+</li>
+</ol>
+<h3>动态下载图片</h3>
+<ol>
+<li>
+<p>配置struts.xml</p>
+<pre><code>&lt;!-- 下载图片 --&gt;
+&lt;action name=&quot;download-logo&quot; 
+    class=&quot;ssh.day02.LogoAction&quot;&gt;
+    &lt;result name=&quot;success&quot; type=&quot;stream&quot;&gt;
+        &lt;param name=&quot;contentType&quot;&gt;${type}&lt;/param&gt;
+        &lt;param name=&quot;inputName&quot;&gt;img&lt;/param&gt;
+        &lt;param name=&quot;contentDisposition&quot;&gt;
+            attachment;filename=&quot;logo.png&quot;
+        &lt;/param&gt;
+    &lt;/result&gt;
+&lt;/action&gt;
+</code></pre>
+
+</li>
+<li>
+<p>在页面中设置下载链接</p>
+<pre><code>&lt;h2&gt;下载图片&lt;/h2&gt;
+&lt;a href=&quot;day02/download-logo.do&quot;&gt;下载&lt;/a&gt; 
+</code></pre>
+
+</li>
+<li>
+<p>测试</p>
+</li>
+</ol>
+<h3>动态下载Excel</h3>
+<p>只要将上述图片下载案例是图片API更换为Excel API, 就可以实现下载Excel功能:</p>
+<ol>
+<li>
+<p>导入Excel API</p>
+<pre><code>&lt;dependency&gt;
+  &lt;groupId&gt;org.apache.poi&lt;/groupId&gt;
+  &lt;artifactId&gt;poi-ooxml&lt;/artifactId&gt;
+  &lt;version&gt;3.16&lt;/version&gt;
+&lt;/dependency&gt;
+</code></pre>
+
+</li>
+<li>
+<p>声明控制器</p>
+<pre><code>public class ExcelAction {
+    private String type;
+    private InputStream excel;
+
+    public String getType() {
+        return type;
+    }
+    public void setType(String type) {
+        this.type = type;
+    }
+    public InputStream getExcel() {
+        return excel;
+    }
+    public void setExcel(InputStream excel) {
+        this.excel = excel;
+    }
+
+    public String execute() throws IOException{
+        //type 来自 tomcat/conf/web.xml
+        type = &quot;application/vnd.openxmlformats-officedocument.spreadsheetml.sheet&quot;;
+        excel = createExcel();
+        return &quot;success&quot;;
+    }
+    private InputStream createExcel() throws IOException {
+        //创建工作簿
+        XSSFWorkbook workbook=new XSSFWorkbook();
+        //在工作簿中创建工作表
+        XSSFSheet sheet = workbook.createSheet();
+        //在工作表里面创建行
+        XSSFRow row0 = sheet.createRow(0);
+        XSSFRow row1 = sheet.createRow(1);
+        XSSFRow row2 = sheet.createRow(2);
+        //在行中创建单元格(cell)
+        XSSFCell cell = row0.createCell(0);
+        cell.setCellValue(&quot;编号&quot;); 
+        row0.createCell(1).setCellValue(&quot;姓名&quot;); 
+        row0.createCell(2).setCellValue(&quot;数量&quot;);  
+        //添加数据
+        row1.createCell(0).setCellValue(1);
+        row1.createCell(1).setCellValue(&quot;范传奇&quot;);
+        row1.createCell(2).setCellValue(1);
+
+        row2.createCell(0).setCellValue(2);
+        row2.createCell(1).setCellValue(&quot;李某&quot;);
+        row2.createCell(2).setCellValue(2);
+
+        ByteArrayOutputStream out=
+                new ByteArrayOutputStream();
+        workbook.write(out);
+        out.close();
+        byte[] data = out.toByteArray();
+
+        return new ByteArrayInputStream(data); 
+    }
+
+}
+</code></pre>
+
+</li>
+<li>
+<p>配置 struts.xml</p>
+<pre><code>&lt;!-- 下载Excel文件 --&gt;
+&lt;action name=&quot;download-excel&quot; 
+    class=&quot;ssh.day02.ExcelAction&quot;&gt;
+    &lt;result name=&quot;success&quot; type=&quot;stream&quot;&gt;
+        &lt;param name=&quot;contentType&quot;&gt;${type}&lt;/param&gt;
+        &lt;param name=&quot;inputName&quot;&gt;excel&lt;/param&gt;
+        &lt;param name=&quot;contentDisposition&quot;&gt;
+            attachment;filename=&quot;demo.xlsx&quot;
+        &lt;/param&gt;
+    &lt;/result&gt;
+&lt;/action&gt;
+</code></pre>
+
+</li>
+<li>
+<p>添加下载链接:</p>
+<pre><code>&lt;h2&gt;下载Excel&lt;/h2&gt;
+&lt;a href=&quot;day02/download-excel.do&quot;&gt;下载&lt;/a&gt; 
+</code></pre>
+
+</li>
+<li>
+<p>测试 </p>
+</li>
+</ol>
+<h3>JSON Result</h3>
+<p>Struts2 利用插件支持了 JSON 类型的 Result</p>
+<pre><code>&lt;dependency&gt;
+  &lt;groupId&gt;org.apache.struts&lt;/groupId&gt;
+  &lt;artifactId&gt;struts2-json-plugin&lt;/artifactId&gt;
+  &lt;version&gt;2.5.12&lt;/version&gt;
+&lt;/dependency&gt;
+</code></pre>
+
+<p>在插件配置文件struts-plugin.xml中可以看到:</p>
+<pre><code>&lt;package name=&quot;json-default&quot; extends=&quot;struts-default&quot;&gt;
+
+    &lt;result-types&gt;
+        &lt;result-type name=&quot;json&quot; class=&quot;org.apache.struts2.json.JSONResult&quot;/&gt;
+        &lt;result-type name=&quot;jsonActionRedirect&quot; class=&quot;org.apache.struts2.json.JSONActionRedirectResult&quot;/&gt;
+    &lt;/result-types&gt;
+...
+</code></pre>
+
+<p>只需要继承 &quot;json-default&quot; 就可以同时使用 json Result和struts-default 中声明的Result了.</p>
+<p>默认情况下 JSON Result 会将控制器的全部Bean属性转换为JSON对象属性发送到浏览器:</p>
+<p><img src="5.png" /></p>
+<p>案例:</p>
+<ol>
+<li>
+<p>声明控制器</p>
+<pre><code>public class JsonAction {
+    private String name;
+    private int age;
+
+    public String getName() {
+        return name;
+    }
+    public void setName(String name) {
+        this.name = name;
+    }
+    public int getAge() {
+        return age;
+    }
+    public void setAge(int age) {
+        this.age = age;
+    }
+
+
+    public String execute(){
+        name = &quot;Tom&quot;;
+        age = 10;
+        return &quot;success&quot;;
+    }
+
+}
+</code></pre>
+
+</li>
+<li>
+<p>配置 struts.xml</p>
+<pre><code>&lt;package name=&quot;test&quot; namespace=&quot;/test&quot;
+    extends=&quot;json-default&quot;&gt;
+    &lt;action name=&quot;json&quot; class=&quot;ssh.day02.JsonAction&quot;&gt;
+        &lt;result name=&quot;success&quot; type=&quot;json&quot;&gt;&lt;/result&gt;
+    &lt;/action&gt;
+&lt;/package&gt;
+</code></pre>
+
+</li>
+<li>
+<p>测试</p>
+</li>
+</ol>
+<p>为了更加灵活的发送JSON数据, 经常用一个JavaBean封装JSON数据, 并且只发送这个一个属性到客户端:</p>
+<p><img src="6.png" /></p>
+<p>案例步骤:</p>
+<ol>
+<li>
+<p>声明JavaBean, JsonResult 类</p>
+<pre><code>public class JsonResult {
+    private static final int SUCCESS=1;
+    private static final int ERROR=0;
+    /**状态*/
+    private int state;
+    /**对应状态的消息*/
+    private String message;
+    /**具体业务数据*/
+    private Object data;
+    /**此构造方法应用于data为null的场景*/
+    public JsonResult(){
+        this.state=SUCCESS;//1
+        this.message=&quot;OK&quot;;
+    }
+    /**有具体业务数据返回时,使用此构造方法*/
+    public JsonResult(Object data){
+        this();
+        this.data=data;
+    }
+    /**出现异常以后要调用此方法封装异常信息*/
+    public JsonResult(Throwable t){
+        this.state=ERROR;
+        this.message=t.getMessage();
+    }
+    public Object getData() {
+        return data;
+    }
+    public int getState() {
+        return state;
+    }
+    public String getMessage() {
+        return message;
+    }
+    public void setState(int state) {
+        this.state = state;
+    }
+
+}
+</code></pre>
+
+</li>
+<li>
+<p>声明控制器</p>
+<pre><code>public class JsonResultAction {
+    private String name;
+    private int age;
+    private JsonResult jsonResult;
+    public String getName() {
+        return name;
+    }
+    public void setName(String name) {
+        this.name = name;
+    }
+    public int getAge() {
+        return age;
+    }
+    public void setAge(int age) {
+        this.age = age;
+    }
+    public JsonResult getJsonResult() {
+        return jsonResult;
+    }
+    public void setJsonResult(JsonResult jsonResult) {
+        this.jsonResult = jsonResult;
+    }
+
+    public String execute(){
+        name = &quot;Tom&quot;;
+        age = 10;
+        String[] names = {&quot;Andy&quot;,&quot;Mac&quot;,&quot;John&quot;,&quot;Jerry&quot;};
+        jsonResult = new JsonResult(names);
+        return &quot;success&quot;;
+    }
+
+}
+</code></pre>
+
+</li>
+<li>
+<p>配置 struts.xml</p>
+<pre><code>&lt;!-- 利用JsonResult封装数据发送到浏览器客户端 --&gt;
+&lt;action name=&quot;json3&quot; 
+    class=&quot;ssh.day02.JsonResultAction&quot;&gt;
+    &lt;result name=&quot;success&quot; type=&quot;json&quot;&gt;
+        &lt;param name=&quot;root&quot;&gt;jsonResult&lt;/param&gt;
+    &lt;/result&gt;
+&lt;/action&gt;
+</code></pre>
+
+</li>
+<li>
+<p>测试</p>
+</li>
+</ol>
+<h2>整合 Struts2 和 Spring</h2>
+<p>整合Struts2 和 Spring的目的是将Spring作为Struts2控制器工厂管理控制器对象.</p>
+<p>Struts2 提供的插件 struts2-spring-plugin 完成这个功能.</p>
+<p><img src="7.png" /></p>
+<p>具体步骤:</p>
+<ol>
+<li>
+<p>导入struts2-spring-plugin </p>
+<pre><code>&lt;dependency&gt;
+  &lt;groupId&gt;org.apache.struts&lt;/groupId&gt;
+  &lt;artifactId&gt;struts2-spring-plugin&lt;/artifactId&gt;
+  &lt;version&gt;2.5.12&lt;/version&gt;
+&lt;/dependency&gt;
+</code></pre>
+
+</li>
+<li>
+<p>添加Spring配置文件: spring-struts2.xml</p>
+<pre><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;beans 
+    xmlns=&quot;http://www.springframework.org/schema/beans&quot; 
+    xmlns:p=&quot;http://www.springframework.org/schema/p&quot;
+    xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; 
+    xmlns:context=&quot;http://www.springframework.org/schema/context&quot;
+    xmlns:tx=&quot;http://www.springframework.org/schema/tx&quot;
+    xmlns:mvc=&quot;http://www.springframework.org/schema/mvc&quot;
+    xsi:schemaLocation=&quot;  
+       http://www.springframework.org/schema/beans   
+       http://www.springframework.org/schema/beans/spring-beans-4.1.xsd  
+       http://www.springframework.org/schema/mvc   
+       http://www.springframework.org/schema/mvc/spring-mvc-4.1.xsd   
+       http://www.springframework.org/schema/tx   
+       http://www.springframework.org/schema/tx/spring-tx-4.1.xsd   
+       http://www.springframework.org/schema/context  
+       http://www.springframework.org/schema/context/spring-context-4.1.xsd&quot; &gt;  
+
+    &lt;context:component-scan 
+        base-package=&quot;ssh.day02&quot;/&gt;
+&lt;/beans&gt;
+</code></pre>
+
+</li>
+<li>
+<p>利用 ContextLoaderListener 初始化Spring容器:</p>
+<pre><code>  &lt;!-- 利用ContextLoaderListener初始化Spring容器 --&gt;
+  &lt;listener&gt;
+    &lt;listener-class&gt;org.springframework.web.context.ContextLoaderListener&lt;/listener-class&gt;
+  &lt;/listener&gt;
+  &lt;context-param&gt;
+     &lt;param-name&gt;contextConfigLocation&lt;/param-name&gt;
+     &lt;param-value&gt;classpath:spring-*.xml&lt;/param-value&gt;
+  &lt;/context-param&gt;
+</code></pre>
+
+</li>
+<li>
+<p>创建 控制器:</p>
+<pre><code>@Controller//BeanID: demoAction
+public class DemoAction {
+
+    public String execute(){
+        System.out.println(&quot;Hello World!&quot;);
+        return &quot;success&quot;;
+    }
+}
+</code></pre>
+
+</li>
+<li>
+<p>配置 struts.xml</p>
+<pre><code>&lt;!-- 利用Spring管理控制器对象 class=BeanID --&gt;
+&lt;action name=&quot;demo&quot; class=&quot;demoAction&quot;&gt;
+    &lt;result name=&quot;success&quot;&gt;
+        /WEB-INF/jsp/ok.jsp
+    &lt;/result&gt;
+&lt;/action&gt;
+</code></pre>
+
+</li>
+<li>
+<p>测试.</p>
+</li>
+</ol>
+<hr />
+<h2>作业</h2>
+<ol>
+<li>创建新项目, 完成今天全部案例</li>
+<li>实现利用 Struts2 动态下载 99乘法表 Excel文件</li>
+<li>实现利用 Struts2 动态下载 99乘法表 图片文件</li>
+<li>创建项目 实现 Struts2 和 Spring 整合案例.</li>
+</ol>
+
+</body>
+</html>
+<!-- This document was created with MarkdownPad, the Markdown editor for Windows (http://markdownpad.com) -->
