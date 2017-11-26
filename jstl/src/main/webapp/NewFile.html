@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	function fun(){
+		var xhr;
+		if(window.XmlHttpRequest)
+			{
+			xhr=new XmlHttpRequest;
+			
+			}
+		else
+			{
+			xhr=new ActiveObject("Microsoft.XMLHTTP");
+			}
+		xhr.open("get","sysb",true);
+		xhr.send();
+		xhr.onreadystatechange=function(){
+			document.getElementById("radom").innerHTML=xhr.responseText;
+		}
+	}
+</script>
+</head>
+<body onload="fun()">
+	<h1><p id="radom"></p></h1>
+</body>
+</html>
